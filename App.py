@@ -1052,7 +1052,7 @@ if st.session_state.pantalla == 0:
     # Pantalla inicial atractiva y amigable
     st.markdown(
         """
-        <div style='text-align: center; font-size: 30px; color: #003366; padding: 20px; background-color: #f2f6fc; border-radius: 15px; margin-top: 50px;'>
+        <div style='text-align: center; font-size: 30px; color: #003366; padding: 20px; background-color: #f2f6fc; border-radius: 15px; margin-top: 20px;'>
             <h1>Bienvenido al Sistema de Inspección GSE</h1>
             <p style='font-size: 18px;'>Con esta herramienta, gestionamos inspecciones y datos con eficiencia y calidad.</p>
             <p style='font-size: 16px; color: #0073e6;'>¡Haga clic en la opción que desee para comenzar con confianza! ✈️</p>
