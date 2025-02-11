@@ -790,7 +790,29 @@ elif st.session_state.pantalla == 4:
 
 # PANTALLA 5: AGREGANDO DATOS FALTANTES
 elif st.session_state.pantalla == 5:
-    st.title("Agregar Datos Faltantes")
+
+    st.markdown(
+            """
+            <style>
+                .titulo-personalizado {
+                    background-color: #ff0000; /* Fondo rojo */
+                    color: white !important; /* Texto blanco asegurado */
+                    padding: 15px; /* Espaciado interno */
+                    text-align: center; /* Centrar el texto */
+                    border-radius: 5px; /* Bordes redondeados */
+                    font-size: 2.25rem; /* Tamaño equivalente a st.title */
+                    font-weight: bold; /* Texto en negrita */
+                    text-transform: uppercase; /* Convertir el texto a mayúsculas*/
+                    margin-top: 20px;
+                    margin-bottom: 25px; /* Separación con contenido siguiente */
+                }
+            </style>
+            <div class="titulo-personalizado">
+                Agregar Datos Sobre Bodegas
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
 
     # Obtener el Vuelo_ID actual
     vuelo_id = st.session_state.get("vuelo_id", None)
