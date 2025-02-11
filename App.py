@@ -7,6 +7,7 @@ import gspread
 import time
 import json
 import pandas as pd
+import base64 
 # Inicializa Google Sheets con credenciales almacenadas en st.secrets
 from google.oauth2.service_account import Credentials
 from datetime import datetime
@@ -129,8 +130,28 @@ st.markdown(
 
 # Ruta de la imagen del encabezado
 imagen_path = Path(__file__).parent / "imag" / "EMSA.png"
+
 if imagen_path.exists():
-    st.image(str(imagen_path), use_container_width=True)
+    # Convertir la imagen a base64
+    with open(imagen_path, "rb") as img_file:
+        base64_image = base64.b64encode(img_file.read()).decode("utf-8")
+
+    # Crear el cuadro con la imagen incrustada en base64 dentro del HTML
+    st.markdown(
+        f"""
+        <div style="
+            padding: 10px;
+            border: 2px solid lightgray;
+            background-color: white;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        ">
+            <img src="data:image/png;base64,{base64_image}" style="width: 100%; border-radius: 5px;" />
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 else:
     st.warning("⚠️ Imagen de encabezado no encontrada.")
 
@@ -1031,7 +1052,7 @@ if st.session_state.pantalla == 0:
     # Pantalla inicial atractiva y amigable
     st.markdown(
         """
-        <div style='text-align: center; font-size: 30px; color: #003366; padding: 20px; background-color: #f2f6fc; border-radius: 15px;'>
+        <div style='text-align: center; font-size: 30px; color: #003366; padding: 20px; background-color: #f2f6fc; border-radius: 15px; margin-top: 20px;'>
             <h1>Bienvenido al Sistema de Inspección GSE</h1>
             <p style='font-size: 18px;'>Con esta herramienta, gestionamos inspecciones y datos con eficiencia y calidad.</p>
             <p style='font-size: 16px; color: #0073e6;'>¡Haga clic en la opción que desee para comenzar con confianza! ✈️</p>
