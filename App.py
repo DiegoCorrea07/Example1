@@ -765,7 +765,7 @@ elif st.session_state.pantalla == 3:
 elif st.session_state.pantalla == 4:
     st.title("✅ Inspección Guardada")
     st.success("La inspección ha sido agregada con éxito.")
-    st.write(f"Total de equipos inspeccionados: {st.session_state.cantidad}")
+    st.write(f"Total de equipos inspeccionados: {st.session_state.datos_inspeccion(cantidad)}")
 
     col1, col2, col3 = st.columns(3)
     with col1:
