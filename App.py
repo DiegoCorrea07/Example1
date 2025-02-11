@@ -7,6 +7,8 @@ import gspread
 import time
 import json
 import pandas as pd
+# Inicializa Google Sheets con credenciales almacenadas en st.secrets
+from google.oauth2.service_account import Credentials
 from datetime import datetime
 from pathlib import Path
 from io import BytesIO
@@ -67,8 +69,9 @@ def guardar_con_retraso(hoja, datos):
     hoja.append_rows(datos)
     time.sleep(2)  # Retraso de 2 segundos entre operaciones
 
-# Inicializa Google Sheets
-gc = gspread.service_account(filename="inspeciongse-swissport-b56ebf7c5040.json")
+credentials_info = st.secrets["GOOGLE_CREDENTIALS"]  # Lee las credenciales desde st.secrets (TOML)
+credentials = Credentials.from_service_account_info(credentials_info)  # Construir credenciales de Google
+gc = gspread.authorize(credentials)  # Autorizar gspread con las credenciales
 
 # Obtén el Spreadsheet
 sheet_id = "1V7ST8vmpc5NVe3V1bfvE5WSRCiRRZv2LyxqW1Q5Bh3Y"
