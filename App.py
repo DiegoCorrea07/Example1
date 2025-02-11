@@ -1101,9 +1101,31 @@ if st.session_state.pantalla == 0:
         unsafe_allow_html=True,
     )
 
-    # Colocamos columnas con opciones de navegación
+   # Contenedor HTML para alinear el botón a la derecha
+    st.markdown(
+        """
+        <div style="display: flex; justify-content: flex-end;">
+            <button style="
+                background-color: #4CAF50;
+                border: none;
+                color: white;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 16px;
+                margin: 4px 2px;
+                border-radius: 12px;
+                cursor: pointer;
+            " onclick="window.location.reload(true);">
+                ✚ Iniciar Inspección
+            </button>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
     
-    if st.button("✚  Iniciar Inspección", key="boton_nueva_inspeccion_inicio"):
+    # Manejador de eventos con el botón. Evento lógico en Python.
+    if st.button("✚ Iniciar Inspección", key="boton_nueva_inspeccion_inicio"):
         st.session_state.clear()
         st.session_state.vuelo_id = str(uuid.uuid4())[:8]
         st.session_state.pantalla = 1
