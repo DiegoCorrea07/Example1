@@ -1092,36 +1092,9 @@ if st.session_state.pantalla == 0:
             background-color: #1e7e34; /* Active más oscuro */
             transform: scale(0.97);
         }
-
-        div[data-testid="stHorizontalBlock"] > div:last-child div.stButton {
-            text-align: right; /* Botón de la segunda columna alineado a la derecha */
-        }
         </style>
         """,
         unsafe_allow_html=True,
-    )
-
-   # Contenedor HTML para alinear el botón a la derecha
-    st.markdown(
-        """
-        <div style="display: flex; justify-content: flex-end;">
-            <button style="
-                background-color: #4CAF50;
-                border: none;
-                color: white;
-                padding: 10px 20px;
-                text-align: center;
-                text-decoration: none;
-                font-size: 16px;
-                margin: 4px 2px;
-                border-radius: 12px;
-                cursor: pointer;
-            " onclick="window.location.reload(true);">
-                ✚ Iniciar Inspección
-            </button>
-        </div>
-        """,
-        unsafe_allow_html=True
     )
     
     # Manejador de eventos con el botón. Evento lógico en Python.
