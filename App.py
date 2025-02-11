@@ -156,7 +156,7 @@ else:
     st.warning("⚠️ Imagen de encabezado no encontrada.")
 
 st.markdown(
-    "<div style='padding: 1px; border: 1px solid #fa0303; border-radius: 1px; background-color: #fa0303; margin-top: 2px;'>",
+    "<div style='padding: 1px; border: 1px solid #fa0303; border-radius: 1px; background-color: #fa0303; margin-top: 12px;'>",
     unsafe_allow_html=True)
 
 
