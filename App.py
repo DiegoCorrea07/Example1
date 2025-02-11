@@ -1102,15 +1102,13 @@ if st.session_state.pantalla == 0:
     )
 
     # Colocamos columnas con opciones de navegación
-    col1, col2 = st.columns([1, 1], gap="large")
-
-    with col2:
-        if st.button("✚  Iniciar Inspección", key="boton_nueva_inspeccion_inicio"):
-            st.session_state.clear()
-            st.session_state.vuelo_id = str(uuid.uuid4())[:8]
-            st.session_state.pantalla = 1
-            st.cache_data.clear()
-            st.rerun()
+    
+    if st.button("✚  Iniciar Inspección", key="boton_nueva_inspeccion_inicio"):
+        st.session_state.clear()
+        st.session_state.vuelo_id = str(uuid.uuid4())[:8]
+        st.session_state.pantalla = 1
+        st.cache_data.clear()
+        st.rerun()
 
     # Imagen en el centro de la pantalla
     imagen_path = Path(__file__).parent / "imag" / "aeropuerto_de_quito_5.jpg"
