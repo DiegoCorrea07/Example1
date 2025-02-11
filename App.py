@@ -1061,13 +1061,12 @@ if st.session_state.pantalla == 0:
         unsafe_allow_html=True
     )
 
-    # CSS para personalizar y alinear los botones
     st.markdown(
         """
         <style>
         /* Botón personalizado */
         div.stButton > button {
-            background-color: #28a745; /* Color azul */
+            background-color: #28a745; /* Verde */
             color: white; 
             font-size: 16px; 
             padding: 8px 16px; 
@@ -1077,27 +1076,28 @@ if st.session_state.pantalla == 0:
             cursor: pointer;
             transition: all 0.3s ease-in-out;
         }
-
+    
         div.stButton > button:hover {
             background-color: #0056b3; /* Hover */
             transform: scale(1.05);
         }
-
+    
         div.stButton > button:active {
             background-color: #003f7f; /* Active */
             transform: scale(0.97);
         }
-
-        div[data-testid="stHorizontalBlock"] > div:first-child div.stButton > button:active {
-            background-color: #1e7e34; /* Active más oscuro */
-            transform: scale(0.97);
+    
+        /* Alineación a la derecha del botón */
+        div.stButton {
+            display: flex;
+            justify-content: flex-end; /* Alínea a la derecha */
         }
         </style>
         """,
         unsafe_allow_html=True,
     )
     
-    # Manejador de eventos con el botón. Evento lógico en Python.
+    # Manejador de eventos para el botón lógico de Python
     if st.button("✚ Iniciar Inspección", key="boton_nueva_inspeccion_inicio"):
         st.session_state.clear()
         st.session_state.vuelo_id = str(uuid.uuid4())[:8]
