@@ -69,11 +69,17 @@ def guardar_con_retraso(hoja, datos):
     hoja.append_rows(datos)
     time.sleep(2)  # Retraso de 2 segundos entre operaciones
 
-credentials_info = st.secrets["GOOGLE_CREDENTIALS"]  # Lee las credenciales desde st.secrets (TOML)
-credentials = Credentials.from_service_account_info(credentials_info)  # Construir credenciales de Google
-gc = gspread.authorize(credentials)  # Autorizar gspread con las credenciales
+# Define el alcance (scope) de autorización para Google Sheets
+SCOPES = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
 
-# Obtén el Spreadsheet
+# Configurar credenciales usando las scopes necesarias
+credentials_info = st.secrets["GOOGLE_CREDENTIALS"]
+credentials = Credentials.from_service_account_info(credentials_info, scopes=SCOPES)
+
+# Usar las credenciales para autorizar gspread
+gc = gspread.authorize(credentials)
+
+# Acceso a la hoja
 sheet_id = "1V7ST8vmpc5NVe3V1bfvE5WSRCiRRZv2LyxqW1Q5Bh3Y"
 spreadsheet = gc.open_by_key(sheet_id)
 
