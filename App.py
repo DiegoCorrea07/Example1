@@ -820,7 +820,7 @@ elif st.session_state.pantalla == 5:
         st.error("⚠️ No se encuentra un Vuelo_ID generado. Vuelve a la pantalla anterior.")
         st.stop()
 
-    st.subheader(f"Datos Faltantes para el Vuelo: {vuelo_id}")
+    st.subheader(f"Datos sobre Bodegas para el Vuelo: {vuelo_id}")
 
     # ----------- FORMULARIOS MEJORADOS PARA CADA BODEGA -----------
 
