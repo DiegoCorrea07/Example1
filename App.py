@@ -478,6 +478,7 @@ elif st.session_state.pantalla == 3:
                 font-size: 2.25rem; /* Tamaño equivalente a st.title */
                 font-weight: bold; /* Texto en negrita */
                 text-transform: uppercase; /* Convertir el texto a mayúsculas*/
+                margin-top: 20px;
                 margin-bottom: 25px; /* Separación con contenido siguiente */
             }
         </style>
