@@ -872,7 +872,7 @@ elif st.session_state.pantalla == 5:
         st.session_state.datos_guardados = False  # Estado inicial: el botón está habilitado
 
     # Cuando el usuario haga clic en el botón "Guardar"
-    if st.button("Guardar Datos Faltantes"):
+    if st.button("🗳️ Finalizar y Enviar"):
         # ----------- VALIDAR CAMPOS OBLIGATORIOS Y HORAS DE CADA SECCIÓN -----------
         errores = []
 
