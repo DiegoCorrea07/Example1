@@ -494,7 +494,7 @@ elif st.session_state.pantalla == 3:
         f"""
         <div style="text-align: center; 
                     font-size: 30px; 
-                    background-color: #ffe7e7; 
+                    background-color: ; 
                     padding: 10px; 
                     border-radius: 15px; 
                     border: 2px solid #FF0000;">
