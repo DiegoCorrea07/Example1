@@ -187,8 +187,8 @@ if st.session_state.pantalla == 1:
 
     st.markdown(
         """
-        <div style='text-align: center; font-size: 18px; background-color: #ffe7e7; padding: 20px; border-radius: 10px; 
-                    border: 2px;'>
+        <div style='text-align: center; font-size: 18px; background-color: ; padding: 20px; border-radius: 10px; 
+                    border: 2px solid #FF0000;'>
             <p><b>Formulario para registrar la inspección de equipos motorizados y no motorizados en la atención a la aeronave. 
             Completar todos los campos obligatorios.</b></p>
         </div>
